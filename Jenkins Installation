@@ -1,0 +1,45 @@
+Install Java version : 
+1. sudo apt update
+2. sudo apt install openjdk-11-jre
+3. java -version
+
+Installation Jenkins Server
+
+1. wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+New:---->  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
+
+2. sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+New:---->  sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+3. sudo apt update
+
+4. sudo apt install jenkins
+
+or sudo apt-get update
+sudo apt-get install jenkins // Use apt-get install jenkins
+
+5. sudo systemctl start jenkins
+
+6. sudo systemctl status jenkins
+
+7. sudo systemctl status jenkins
+
+8. sudo ufw allow 8080
+   sudo ufw allow 80
+
+9. sudo ufw allow OpenSSH
+   sudo ufw enable
+
+10. sudo ufw status
+
+11. sudo cat /var/lib/jenkins/secrets/initialAdminPassword  (Password Key)
+
+Site URL : https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-20-04
+
+(/root/.ssh/id_rsa):
+
+***************************************
+  103  sudo apt-get install daemon
+  104  sudo dpkg -i /tmp/jenkins.deb
+  105  sudo systemctl start jenkins
+  106  sudo systemctl status jenkins
