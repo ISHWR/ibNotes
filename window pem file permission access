@@ -1,0 +1,13 @@
+//Ishwar Bhumbak Notes ishwarbumbak@gmail.com//
+
+For windows users use three command's:
+
+1. icacls.exe your_key_name.pem /reset
+
+2. icacls.exe your_keyname.pem /grant:r "%USERNAME%:R"
+			or 
+icacls.exe your_key_name.pem /grant:r "$($env:username):(r)"
+
+3. icacls.exe your_key_name.pem /inheritance:r
+
+It will Provide Permission like chmod 400 permission in linux.
